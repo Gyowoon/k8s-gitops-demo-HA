@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx-gitops-v2label
 spec:
-  replicas: 3
+  replicas: 5
   selector: # 관리대상 Pod를 선택하는 기준 라벨 A
     matchLabels:
       app: label4pod
