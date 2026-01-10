@@ -1,21 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-gitops
+  name: nginx-gitops-v2
   labels:
-    app: nginx-gitops
+    app: nginx-gitops-v2label
 spec:
-  replicas: 1
-  selector:
+  replicas: 3
+  selector: # 관리대상 Pod를 선택하는 기준 라벨 A
     matchLabels:
-      app: nginx-gitops
-  template:
+      app: label4pod
+  template: # 해당 Deploy가 생성할 Pod 에 붙일 라벨 B
     metadata:
       labels:
-        app: nginx-gitops
+        app: label4pod
     spec:
       containers:
       - name: nginx
         image: nginx:1.25
         ports:
         - containerPort: 80
+        
+# 라벨 A와 B가 같지 않으면 Deployment는 자기가 생성한 Pod를 인식 불가
