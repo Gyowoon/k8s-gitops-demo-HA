@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: nginx-gitops
+    app: label4pod # Deployment가 생성하는 pod에 할당 및 관리 label과  동일해야 함(Spec Template 또는 Spec  Selector) 
   ports:
   - port: 80
     targetPort: 80
