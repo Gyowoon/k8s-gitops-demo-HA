@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-gitops-cli-ver0112 # Deployment의 이름 , 식별용이므로 아무렇게 지어도 됨 A
+  name: nginx-gitops-cli-newver1 # Deployment의 이름 , 식별용이므로 아무렇게 지어도 됨 A
   labels:
     app: nginx-gitops-label # Deployment를 식별하기 위한 라벨 , 마찬가지로 아무렇게나 설정해도 됨 B
 spec:
-  replicas: 2
+  replicas: 5
   selector: # 관리대상 Pod를 선택하는 기준 라벨 C
     matchLabels:
       app: label4pod
